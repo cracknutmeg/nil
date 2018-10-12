@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- suppress AndroidLintIconDuplicates -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.allpoint"
+          android:versionCode="18"
+          android:versionName="1.0.18">
+
+    <uses-sdk
+            android:minSdkVersion="18"
+            android:targetSdkVersion="20"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+<!--
+    
+         The following two permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!-- REQUIRED -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <!-- MODIFICATION REQUIRED - Replace "com.urbanairship.richpush.sample1" with your package name -->
+    <permission
+            android:name="com.allpoint.permission.UA_DATA"
+            android:protectionLevel="signature"/>
+
+    <uses-permission android:name="com.allpoint.permission.UA_DATA"/>
+    <!-- The two elements above ensure that only this application has access to the Urban Airship provider and can receive push intents -->
+
+
+    <!-- REQUIRED PERMISSIONS for GCM -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <!-- This app has permission to register with GCM and receive message -->
+    <!-- Required MODIFICATION REQUIRED - Replace "com.urbanairship.richpush.sample1" with your package name -->
+    <permission
+            android:name="com.allpoint.permission.C2D_MESSAGE"
+            android:protectionLevel="signature"/>
+
+    <uses-permission android:name="com.allpoint.permission.C2D_MESSAGE"/>
+    <!-- The two elements above ensure that only this application can receive the messages and registration result -->
+
+
+    <!-- REQUIRED PERMISSIONS for ADM -->
+    <uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE"/>
+    <!-- Required MODIFICATION REQUIRED - Replace "com.urbanairship.richpush.sample1" with your package name -->
+    <permission
+            android:name="com.allpoint.permission.RECEIVE_ADM_MESSAGE"
+            android:protectionLevel="signature"/>
+
+    <uses-permission android:name="com.allpoint.permission.RECEIVE_ADM_MESSAGE"/>
+    <!-- The two elements above ensure that only this application can receive the messages and registration result -->
+
+
+    <!-- OPTIONAL Urban Airship Settings -->
+    <!-- REQUIRED FOR LOCATION -->
+    <!-- Use ACCESS_COARSE_LOCATION if GPS access is not necessary -->
+    <!-- uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" / -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!-- OPTIONAL - This permission is only necessary if your app has multiple processes -->
+    <!-- <uses-permission android:name="android.permission.BROADCAST_STICKY" /> -->
+
+    <uses-permission android:name="com.allpoint.permission.C2D_MESSAGE"/>
+
+    <!-- This app has permission to register and receive message -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+
+    <uses-feature
+            android:glEsVersion="0x00020000"
+            android:required="true"/>
+    <uses-feature
+            android:name="android.hardware.telephony"
+            android:required="false"/>
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="false"/>
+    <uses-feature
+            android:name="android.hardware.camera.autofocus"
+            android:required="false"/>
+
+    
+    
+    <application
+            android:name="com.allpoint.AtmFinderApplication_"
+            android:allowBackup="true"
+            android:icon="@drawable/app_icon"
+            android:label="@string/app_name"
+            android:largeHeap="true"
+            android:theme="@style/appTheme">
+            
+        <meta-data android:name="hostname" android:value="allpointmobile.cardtronicsdata.com" />
+        <meta-data android:name="SERVER_CERIFICATE_NAME" android:value="wildcard_cardtronicsdata_com" />
+        <meta-data android:name="PRODUCTION_BUILD" android:value="true" />
+        <meta-data android:name="SERVER_BASE_URL" android:value="allpointmobile.cardtronicsdata.com4" />
+        <meta-data android:name="LOGIN_USER_NAME" android:value="AllPointMobileApiUser" />
+        <meta-data android:name="LOGIN_USER_PASSWORD" android:value="Cards@1234" />
+
+
+     
+        
+        <activity
+                android:name="com.allpoint.activities.tablet.HistoryActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+
+        <activity
+                android:name="com.allpoint.activities.RegistrationOTPActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        
+        <activity
+                android:name="com.allpoint.activities.OTPActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        
+        
+        <activity
+                android:name="com.allpoint.activities.phone.HistoryActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity android:name="com.allpoint.activities.tablet.CardListActivity_"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name="com.allpoint.activities.phone.CardListActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name="com.allpoint.activities.ForgetPasswordActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name="com.allpoint.activities.CardCheckActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name="com.allpoint.activities.ChangePasswordActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+
+        <!-- android:name=".activities.SplashActivity_" -->
+        <activity android:name=".activities.SplashActivity_">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".activities.tablet.MainActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop"
+                android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+                android:name=".activities.tablet.PointDetailsActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name=".activities.tablet.AboutActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+
+        <activity
+                android:name=".activities.TermsAndCondition_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+
+
+        <activity
+                android:name=".activities.tablet.MessageActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.urbanairship.push.OPENED"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".activities.PinMapActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name=".activities.ScanCardActivity_"
+                android:launchMode="singleTop"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+        <activity android:name=".activities.tablet.MainMenuActivity_"
+            	  android:configChanges="keyboardHidden|screenSize"
+                  android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name=".activities.phone.MainMenuActivity_"
+                android:configChanges="keyboardHidden|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name=".activities.phone.SettingsActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name=".activities.phone.RichPushActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name=".activities.phone.MessageActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.urbanairship.push.OPENED"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".activities.phone.AboutActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name=".activities.phone.MainActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop"
+                android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+                android:name=".activities.phone.FiltersActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name=".activities.phone.ResultListActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop"
+                android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+                android:name=".activities.phone.PointDetailsActivity_"
+                android:launchMode="singleTop">
+        </activity>
+        <activity
+                android:name="com.allpoint.activities.RegistrationActivity_"
+                android:launchMode="singleTop"
+                android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+        <activity
+                android:name="io.card.payment.CardIOActivity"
+                android:configChanges="keyboardHidden|orientation"/>
+         <activity
+                android:name="io.card.payment.DataEntryActivity"
+                android:screenOrientation="portrait"/> 
+        <activity
+                android:name="com.allpoint.activities.LoginActivity_"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTop">
+        </activity>
+
+        <activity
+                android:name="com.allpoint.activities.CardSuccessActivity_"
+                android:configChanges="orientation">
+        </activity>
+        <activity
+                android:name="com.allpoint.activities.CardFailureActivity_"
+                android:configChanges="orientation">
+        </activity>
+
+
+        <meta-data
+                android:name="com.google.android.maps.v2.API_KEY"
+                android:value="AIzaSyDsgwG-iFTxNYpFhqFEDQ0zYWc5gail8H0"/>
+
+        <!--
+        Optional: This is an example of one of the many ways to handle deep
+        linking in the application.  To use with your application, update the data
+        scheme to be unique for the application and modify ParseDeepLinkActivity.parseDeepLink
+        method to match your application's deep link parsing
+
+
+        -->
+        <activity android:name="com.allpoint.ParseDeepLinkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <!-- Handles any vnd.urbanairship.richpush://deeplink URI's -->
+                <data
+                        android:host="deeplink"
+                        android:scheme="vnd.urbanairship.richpush"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Needed for Action.startActivityForResult -->
+        <activity android:name="com.urbanairship.actions.ActionActivity"/>
+        <activity android:name="com.urbanairship.CoreActivity"/>
+
+        <!--
+        REQUIRED for Landing Pages
+        MODIFICATION REQUIRED:
+         - Set or Remove the parent activity
+         - Set or Remove the theme.  Removing the theme will cause the landing page
+         to use the default theme for the application.  If the theme allows an action
+         bar and is running on a honeycomb or newer device, the action bar will enable
+         up navigation.
+         - For more customization details, see com.urbanairship.actions.LandingPageActivity
+
+
+        -->
+        <activity
+                android:name="com.urbanairship.actions.LandingPageActivity"
+                android:exported="false"
+                android:parentActivityName="com.urbanairship.richpush.sample1.MainActivity">
+
+            <!-- Sample layout, remove to use the default -->
+            <meta-data
+                    android:name="com.urbanairship.action.LANDING_PAGE_VIEW"
+                    android:resource="@layout/activity_landing_page"/>
+
+            <!--
+            Optional: Landing page will start the parent activity if the landing
+            page is the root task.  Also supports proper up navigation if the action
+            bar is supported
+
+
+            -->
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.allpoint.MainActivity"/>
+
+            <intent-filter>
+                <action android:name="com.urbanairship.actions.SHOW_LANDING_PAGE_INTENT_ACTION"/>
+
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <!-- REQUIRED for Urban Airship GCM -->
+        <!--
+        <receiver android:name="com.urbanairship.CoreReceiver" />
+        <receiver
+            android:name="com.urbanairship.push.GCMPushReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                MODIFICATION REQUIRED - Use your package name as the category
+                <category android:name="com.allpoint" />
+            </intent-filter>
+        </receiver>
+
+
+        -->
+
+
+        <!--
+             REQUIRED for Urban Airship Push. The priority is important to be set lower than the
+               application's push intent receiver in order for the push intent receiver to handle push intents
+               before the core receiver. This allows the application to launch any activities before Urban
+               Airship performs any actions or falls back to launching the application launch intent.
+
+
+        -->
+        <!--
+        <receiver android:name="com.urbanairship.CoreReceiver"
+                  android:exported="false">
+            <intent-filter android:priority="-999">
+                <action android:name="com.urbanairship.push.OPENED" />
+                MODIFICATION REQUIRED - Use your package name as the category
+                <category android:name="com.allpoint" />
+            </intent-filter>
+        </receiver>
+
+
+        -->
+
+        <service
+                android:name="com.urbanairship.analytics.EventService"
+                android:label="Event Service"/>
+
+        <!-- This is required for persisting preferences related to push and location -->
+        <provider
+                android:name="com.urbanairship.UrbanAirshipProvider"
+                android:authorities="com.allpoint.urbanairship.provider"
+                android:exported="false"
+                android:multiprocess="true"/>
+
+        <!-- REQUIRED for Rich Push -->
+        <service android:name="com.urbanairship.richpush.RichPushUpdateService"/>
+
+        <!-- END OF REQUIRED ITEMS -->
+
+
+        <!-- OPTIONAL (for segments support) -->
+        <service
+                android:name="com.urbanairship.location.LocationService"
+                android:label="Segments Service"/>
+
+        <!-- REQUIRED -->
+        <!--
+             The 'android:process' parameter is optional. Set it to a value starting
+            with a colon (:) to make it run in a separate,
+            private process
+
+
+        -->
+        <service
+                android:name="com.urbanairship.push.PushService"
+                android:process=":com.urbanairship.push.process"/>
+
+        <!-- OPTIONAL, if you want to receive push, push opened and registration completed intents -->
+        <!-- Replace the receiver below with your package and class name -->
+        <!--
+        <receiver
+            android:name=".services.IntentReceiver"
+            android:exported="false" >
+
+            REQUIRED IntentFilter - For Helium and Hybrid
+            <intent-filter>
+                <action android:name="com.urbanairship.push.PushManager.ACTION_NOTIFICATION_OPENED" />
+            </intent-filter>
+        </receiver>
+
+
+        -->
+
+        <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version"/>
+
+        <receiver
+                android:name="com.allpoint.IntentReceiver"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.urbanairship.push.CHANNEL_UPDATED"/>
+                <action android:name="com.urbanairship.push.OPENED"/>
+                <action android:name="com.urbanairship.push.DISMISSED"/>
+                <action android:name="com.urbanairship.push.RECEIVED"/>
+
+                <!-- MODIFICATION REQUIRED - Use your package name as the category -->
+                <category android:name="com.allpoint"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- android:value="@integer/google_play_services_version" /> -->
+
+
+        <!--
+             REQUIRED for Urban Airship Push. The priority is important to be set lower than the
+               application's push intent receiver in order for the push intent receiver to handle push intents
+               before the core receiver. This allows the application to launch any activities before Urban
+               Airship performs any actions or falls back to launching the application launch intent.
+
+
+        -->
+        <receiver
+                android:name="com.urbanairship.CoreReceiver"
+                android:exported="false">
+            <intent-filter android:priority="-999">
+                <action android:name="com.urbanairship.push.OPENED"/>
+
+                <!-- MODIFICATION REQUIRED - Use your package name as the category -->
+                <category android:name="com.allpoint"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- REQUIRED for GCM -->
+        <receiver
+                android:name="com.urbanairship.push.GCMPushReceiver"
+                android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+
+                <!-- MODIFICATION REQUIRED - Use your package name as the category -->
+                <category android:name="com.allpoint"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- REQUIRED for ADM -->
+        <receiver
+                android:name="com.urbanairship.push.ADMPushReceiver"
+                android:permission="com.amazon.device.messaging.permission.SEND">
+            <intent-filter>
+                <action android:name="com.amazon.device.messaging.intent.REGISTRATION"/>
+                <action android:name="com.amazon.device.messaging.intent.RECEIVE"/>
+
+                <!-- MODIFICATION REQUIRED - Use your package name as the category -->
+                <category android:name="com.allpoint"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- REQUIRED for ADM -->
+        <receiver
+                android:name="com.urbanairship.push.ADMPushReceiver"
+                android:permission="com.amazon.device.messaging.permission.SEND">
+            <intent-filter>
+                <action android:name="com.amazon.device.messaging.intent.REGISTRATION"/>
+                <action android:name="com.amazon.device.messaging.intent.RECEIVE"/>
+
+                <!-- MODIFICATION REQUIRED - Use your package name as the category -->
+                <category android:name="com.allpoint"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- REQUIRED for Urban Airship -->
+        <service
+                android:name="com.urbanairship.push.PushService"
+                android:label="Push Notification Service"/>
+        <service
+                android:name="com.urbanairship.analytics.EventService"
+                android:label="Event Service"/>
+        <service android:name="com.urbanairship.actions.ActionService"/>
+        <service android:name="com.urbanairship.richpush.RichPushUpdateService"/>
+
+        <!-- OPTIONAL for Urban Airship Location (for segments support) -->
+        <service
+                android:name="com.urbanairship.location.LocationService"
+                android:label="Segments Service"/>
+
+        <!-- This is required for persisting preferences related to push and location -->
+        <!-- MODIFICATION REQUIRED - Replace "com.urbanairship.richpush.sample1" with your package name -->
+        <provider
+                android:name="com.urbanairship.UrbanAirshipProvider"
+                android:authorities="com.allpoint.urbanairship.provider"
+                android:exported="true"
+                android:multiprocess="true"
+                android:permission="com.allpoint.permission.UA_DATA"/>
+
+        <!--
+        <service
+            android:name="com.qualcommlabs.usercontext.service.GimbalService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.allpoint.service.USER_CONTEXT_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.qualcommlabs.usercontext.service.UserContextServiceStartStopReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+        -->
+        <service
+                android:name="com.allpoint.services.GeofenceService"
+                android:exported="false"/>
+        <service
+                android:name="com.gimbal.internal.service.GimbalService"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.allpoint.service.GIMBAL_SERVICE"/>
+            </intent-filter>
+        </service>
+
+        <receiver
+                android:name="com.gimbal.internal.service.GimbalServiceStartStopReceiver"
+                android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

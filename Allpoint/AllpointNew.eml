@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="true" jdk="Android 4.0.3 Google APIs" jdk_type="Android SDK">
+	<output-test url="file://$MODULE_DIR$/out/test/AllpointNew"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="C:\Allpoint\libs" scope="COMPILE">
+		<relative-module-cls project-related="file://$PROJECT_DIR$/libs"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/libs/FlurryAgent.jar!/"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/libs/bugsense-3.5.jar!/"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/libs/guava-14.0.1.jar!/"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/libs/socialauth-4.2.jar!/"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/libs/socialauth-android-2.6.jar!/"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/libs/urbanairship-lib-3.2.1.jar!/"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/libs/androidannotations-api-3.0-SNAPSHOT.jar!/"/>
+	</lib>
+	<levels>
+		<level name="google-play-services" value="project"/>
+		<level name="android-support-v4" value="project"/>
+	</levels>
+</component>

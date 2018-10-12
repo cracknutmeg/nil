@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="WrongCall" severity="ignore">
+        <ignore path="External Libraries/SwipeLibraryA/src/com/daimajia/swipe/SwipeLayout.java" />
+        <ignore path="External Libraries/SwipeLibraryA/src/com/daimajia/swipe/SwipeLayout.java" />
+    </issue>
+</lint>

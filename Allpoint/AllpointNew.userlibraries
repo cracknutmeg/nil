@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="google-play-services">
+    <archive path="C:/android_sdk_win/sdk/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar" />
+  </library>
+  <library name="android-support-v4">
+    <archive path="C:/android_sdk_win/sdk/extras/android/support/v4/android-support-v4.jar" />
+  </library>
+  <library name="android">
+    <archive path="C:/android/GoogleMaps/libs/android-support-v4.jar" />
+  </library>
+  <library name="src" />
+</eclipse-userlibraries>
+

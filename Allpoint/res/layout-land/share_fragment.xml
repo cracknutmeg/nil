@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--suppress AndroidLintOverdraw -->
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false" android:focusable="false" android:focusableInTouchMode="false"
+        android:layout_centerInParent="true" android:background="@color/white"
+        android:layout_alignParentBottom="false" android:layout_alignParentRight="false">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="@string/en_shareTitle"
+              android:id="@+id/tvShareVia" android:textColor="@color/black"
+              android:textSize="18dp" android:gravity="center|left"
+              android:layout_marginLeft="15dp" android:layout_marginTop="10dp" android:layout_marginBottom="10dp"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" android:background="@color/greenLine" android:clickable="false"
+            android:focusable="false" android:focusableInTouchMode="false">
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="0dip" android:layout_weight="1" android:clickable="false"
+            android:focusable="false" android:focusableInTouchMode="false" android:baselineAligned="false">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1" android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false">
+            <ImageButton
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:id="@+id/shareEmailImageButton" android:background="@null"
+                    android:layout_weight="9" android:layout_marginLeft="15dp" android:layout_marginTop="30dp"
+                    android:layout_marginRight="20dp"
+                    android:focusableInTouchMode="false" android:clickable="true" android:scaleType="fitCenter"
+                    android:src="@drawable/share_gmail"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/en_shareEmail"
+                    android:id="@+id/tvShareEmail" android:gravity="center" android:textColor="@color/shareGRAY"
+                    android:layout_weight="1" android:focusableInTouchMode="false" android:clickable="true"
+                    android:layout_gravity="center" android:layout_marginBottom="30dp"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1" android:clickable="false"
+                      android:focusable="false" android:focusableInTouchMode="false">
+            <ImageButton android:layout_width="64dp" android:layout_height="64dp"
+                         android:id="@+id/sharebySmsImageButton"
+                         android:background="@null" android:layout_weight="9"
+                         android:layout_marginLeft="20dp" android:layout_marginTop="30dp"
+                         android:layout_marginRight="20dp" android:focusableInTouchMode="false"
+                         android:clickable="true" android:scaleType="fitCenter" android:src="@drawable/share_messages"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="@string/en_shareMessaging"
+                      android:id="@+id/tvShareSms" android:gravity="center" android:layout_gravity="center"
+                      android:textColor="@color/shareGRAY" android:layout_weight="1"
+                      android:clickable="true" android:focusableInTouchMode="false" android:layout_marginBottom="30dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

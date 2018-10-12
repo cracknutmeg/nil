@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/detailsOverlay" android:baselineAligned="false"
+                android:visibility="visible">
+
+
+    <RelativeLayout style="@style/top_bar_rel_lay_style"
+                    android:id="@+id/relativeLayoutDetails">
+        <TextView
+                style="@style/top_bar_title_style"
+                android:text="@string/en_detailViewLayoutTitle"
+                android:id="@+id/tvDetailViewTitle"
+                />
+        <ImageButton
+                android:layout_width="@dimen/back_button_width"
+                android:layout_height="match_parent"
+                android:id="@+id/iBtnDetailsBack" android:layout_alignParentLeft="true"
+                android:background="@null" android:layout_toRightOf="@+id/tvDetailViewTitle"
+                android:layout_centerVertical="true" android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:paddingLeft="8dp" android:paddingRight="8dp" android:src="@drawable/button_back"
+                android:scaleType="centerInside"/>
+        <ImageButton android:layout_width="wrap_content" android:layout_height="match_parent"
+                     android:id="@+id/shareButton" android:enabled="true"
+                     android:background="@null" android:scaleType="centerInside"
+                     android:src="@drawable/details_share" android:adjustViewBounds="false"
+                     android:layout_alignParentRight="true" android:layout_marginRight="30dp"/>
+    </RelativeLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:weightSum="10"
+            android:layout_below="@+id/relativeLayoutDetails" android:id="@+id/layoutContent"
+            android:layout_above="@+id/bottom_bar" android:baselineAligned="false"
+            android:divider="@drawable/divider_side_panel"
+            android:showDividers="middle">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:layout_weight="5.5">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/details" android:background="@color/white">
+                <ImageView
+                        android:layout_width="@dimen/detail_view_image_size"
+                        android:layout_height="@dimen/detail_view_image_size"
+                        android:id="@+id/iViewRetailerLogo" android:layout_gravity="center_horizontal|top"
+                        android:src="@drawable/retailer_allpoint" android:layout_margin="10dp"
+                        android:scaleType="centerInside"/>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tvDetailsPointName" android:layout_gravity="center|left"
+                            android:textSize="@dimen/fontsize_results_name" android:textColor="@color/black"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="5dp" android:layout_marginLeft="5dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/tvDetailsPointAddress"
+                              android:layout_gravity="center|left" android:textSize="@dimen/fontsize_details_address"
+                              android:textColor="@color/shareGRAY"
+                              android:layout_marginBottom="5dp" android:layout_marginLeft="5dp"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/tvDetailsPointDistance"
+                              android:layout_gravity="center|left" android:textSize="@dimen/fontsize_details_address"
+                              android:textColor="@color/black"
+                              android:layout_marginBottom="10dp"
+                              android:layout_marginLeft="5dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/apGreen" android:showDividers="beginning"
+                    android:id="@+id/servicesLayout">
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4">
+                    <ImageButton android:layout_width="match_parent" android:layout_height="wrap_content"
+                                 android:id="@+id/directionButton" android:background="@null"
+                                 android:layout_weight="1" android:scaleType="centerInside"
+                                 android:src="@drawable/details_direction"/>
+                    <ImageButton android:layout_width="match_parent" android:layout_height="wrap_content"
+                                 android:id="@+id/hoursButton" android:background="@null"
+                                 android:layout_weight="1" android:scaleType="centerInside"
+                                 android:src="@drawable/details_hours"/>
+                    <ImageButton android:layout_width="match_parent" android:layout_height="wrap_content"
+                                 android:id="@+id/callButton" android:background="@null"
+                                 android:layout_weight="1" android:scaleType="centerInside"
+                                 android:src="@drawable/details_call"/>
+                    <ImageButton android:layout_width="match_parent" android:layout_height="wrap_content"
+                                 android:id="@+id/storeMapButton" android:background="@null"
+                                 android:layout_weight="1" android:scaleType="centerInside"
+                                 android:src="@drawable/details_floor_map_disable"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp" android:background="@color/white">
+                </LinearLayout>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/en_detailViewServicesTitle"
+                        android:id="@+id/tvServicesTitle" android:layout_gravity="center"
+                        android:textSize="@dimen/fontsize_details_address" android:layout_margin="5dp"
+                        android:textColor="@color/white"
+                        android:gravity="center"/>
+                <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:id="@+id/listViewServices" android:layout_gravity="center"
+                        android:fastScrollAlwaysVisible="false" android:divider="@null"
+                        android:background="@color/white"
+                        android:paddingBottom="10dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.google.android.gms.maps.SupportMapFragment" android:id="@+id/mapDetails"
+                android:layout_weight="4.5"/>
+    </LinearLayout>
+    <fragment android:name="com.allpoint.activities.tablet.fragments.TabBarFragment_" android:id="@+id/bottom_bar"
+              android:layout_width="match_parent" android:layout_height="@dimen/top_panel_height"
+              android:layout_alignParentLeft="true" android:layout_alignParentBottom="true"
+              android:layout_alignParentRight="true" android:layout_gravity="center"/>
+
+
+</RelativeLayout>

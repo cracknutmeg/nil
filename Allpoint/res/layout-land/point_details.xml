@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:id="@+id/detailsOverlay" android:baselineAligned="false"
+              android:visibility="visible">
+
+
+    <RelativeLayout style="@style/top_bar_rel_lay_style"
+                    android:id="@+id/relativeLayoutDetails">
+        <ImageButton android:layout_width="wrap_content" android:layout_height="match_parent"
+                     android:id="@+id/shareButton" android:layout_gravity="center" android:enabled="true"
+                     android:layout_alignParentRight="true" android:layout_alignParentTop="true"
+                     android:background="@null" android:layout_alignParentBottom="true" android:scaleType="centerInside"
+                     android:src="@drawable/details_share"/>
+        <TextView
+
+                android:text="@string/en_detailViewLayoutTitle"
+                android:id="@+id/tvDetailViewTitle"
+                style="@style/top_bar_title_style"/>
+        <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:id="@+id/iBtnDetailsBack" android:layout_alignParentLeft="true"
+                android:background="@null" android:layout_toRightOf="@+id/tvDetailViewTitle"
+                android:layout_centerVertical="true" android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:paddingLeft="8dp" android:paddingRight="8dp" android:src="@drawable/panel_button_arrow"
+                android:scaleType="centerInside"/>
+    </RelativeLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/details" android:background="@color/apGreen">
+        <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/iViewRetailerLogo" android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/allpoint_logo" android:layout_margin="10dp" android:scaleType="centerInside"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_weight="4">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvDetailsPointName" android:layout_gravity="center|left" android:textStyle="bold"
+                    android:textSize="17dp" android:textColor="@color/white" android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp" android:layout_marginLeft="5dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/tvDetailsPointAddress"
+                      android:layout_gravity="center|left" android:textSize="16dp"
+                      android:textColor="@color/white"
+                      android:layout_marginBottom="5dp" android:layout_marginTop="5dp" android:layout_marginLeft="5dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/tvDetailsPointDistance"
+                      android:layout_gravity="center|left" android:textSize="16dp"
+                      android:textColor="@color/white"
+                      android:layout_marginBottom="10dp" android:layout_marginTop="5dp"
+                      android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:background="@color/apGreen"
+                      android:showDividers="beginning" android:id="@+id/linearLayout" android:layout_weight="4">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="@string/en_detailViewServicesTitle"
+                      android:id="@+id/tvServicesTitle" android:layout_gravity="center" android:textStyle="bold"
+                      android:textSize="16dp" android:layout_margin="5dp" android:textColor="@color/white"
+                      android:gravity="center"/>
+            <ListView android:layout_width="match_parent" android:layout_height="60dp" android:gravity="center"
+                      android:id="@+id/listViewServices" android:layout_gravity="center"
+                      android:layout_marginTop="5dp" android:divider="@null" android:background="@null"/>
+        </LinearLayout>
+    </LinearLayout>
+    <fragment android:name="com.allpoint.activities.phone.fragments.DetailsActionBarFragment_"
+              android:id="@+id/bottom_bar"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/top_panel_height"
+              android:layout_marginBottom="0dp" android:layout_marginLeft="0dp"
+            />
+    <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.google.android.gms.maps.SupportMapFragment" android:id="@+id/mapDetails"
+            />
+
+
+</LinearLayout>
